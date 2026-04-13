@@ -1,0 +1,46 @@
+{
+  "name": "code-fold-manager",
+  "displayName": "Code Fold Manager",
+  "description": "Toggle folding for top-level functions from the VS Code editor title bar.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IvRogoz/code-fold-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IvRogoz/code-fold-manager/issues"
+  },
+  "homepage": "https://github.com/IvRogoz/code-fold-manager#readme",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:codeFoldManager.toggleTopLevelFunctions"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeFoldManager.toggleTopLevelFunctions",
+        "title": "Code Fold Manager: Toggle Top-Level Functions",
+        "icon": "$(fold)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "codeFoldManager.toggleTopLevelFunctions",
+          "group": "navigation@100"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "echo No lint configured"
+  }
+}
